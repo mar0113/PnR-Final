@@ -85,8 +85,6 @@ class Pigo(object):
         """runs a series of methods each animating a dance move"""
         print('Parent dance is lame.')
 
-
-
     ##############################################
     ##### FUNCTIONS NOT INTENDED TO BE OVERWRITTEN
     def set_speed(self, left, right):
@@ -121,7 +119,6 @@ class Pigo(object):
         left_rot()
         self.turn_track -= enc
         time.sleep(1*(enc/18)+.4)
-
 
     def encB(self, enc):
         """sets an encoder, moves back, sleeps, (18 = 1 wheel rot)"""
@@ -271,7 +268,6 @@ class Pigo(object):
         print('My safe stop distance is ' + str(self.SAFE_STOP_DIST) + 'cm')
         print('My hard stop distance is ' + str(self.HARD_STOP_DIST) + 'cm')
 
-
 def stop_now():
     try:
         from gopigo import *
@@ -287,9 +283,8 @@ def stop_now():
 try:
     p = Pigo()
 except (KeyboardInterrupt, SystemExit):
-    from gopigo import *
-    stop()
+    stop_now()
 except Exception as ee:
     from gopigo import *
-    stop()
+    stop_now()
     logging.error(ee.__str__())
