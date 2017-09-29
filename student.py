@@ -85,7 +85,7 @@ class Piggy(pigo.Pigo):
         for x in range(4):
             self.encF(5)
             self.encB(5)
-        print("Ta-Da!")
+        print("\n--- Ta-Da! ---\n")
 
     def nav(self):
         """auto pilots and attempts to maintain original heading"""
