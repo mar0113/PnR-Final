@@ -61,6 +61,7 @@ class Piggy(pigo.Pigo):
         self.to_the_left()
         self.now_kick()
         self.walk_it_by_yourself()
+        self.finale
 
     def to_the_right(self):
         """subroutine of dance method"""
@@ -85,6 +86,13 @@ class Piggy(pigo.Pigo):
         for x in range(4):
             self.encF(5)
             self.encB(5)
+
+    def finale(self):
+        for x in range(4):
+            self.encF(10)
+        for ang in range(60, 120, 10):
+            self.servo(ang)
+            time.sleep(.2)
 
     def nav(self):
         """auto pilots and attempts to maintain original heading"""
