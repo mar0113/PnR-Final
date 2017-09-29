@@ -78,7 +78,7 @@ class Piggy(pigo.Pigo):
         """subroutine of dance method"""
         """loops in a 120 degree arc and moves servo"""
         for ang in range(20, 160, 2):
-            servo(ang)
+            self.servo(ang)
             time.sleep(.2)
 
     def walk_it_by_yourself(self):
