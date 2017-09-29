@@ -77,7 +77,7 @@ class Piggy(pigo.Pigo):
     def now_kick(self):
         """subroutine of dance method"""
         """loops in a 120 degree arc and moves servo"""
-        for ang in range(20, 160, 2):
+        for ang in range(60, 120, 2):
             self.servo(ang)
             time.sleep(.2)
 
