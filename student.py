@@ -23,7 +23,7 @@ class Piggy(pigo.Pigo):
         # YOU DECIDE: What left motor power helps straighten your fwd()?
         self.LEFT_SPEED = 140
         # YOU DECIDE: What left motor power helps straighten your fwd()?
-        self.RIGHT_SPEED = 140
+        self.RIGHT_SPEED = 130
         # This one isn't capitalized because it changes during runtime, the others don't
         self.turn_track = 0
         # Our scan list! The index will be the degree and it will store distance
@@ -57,6 +57,17 @@ class Piggy(pigo.Pigo):
         """executes a series of methods that add up to a compound dance"""
         print("\n---- LET'S DANCE ----\n")
         ##### WRITE YOUR FIRST PROJECT HERE
+        self.to_the_right()
+        #self.to_the_left()
+        #self.now_kick()
+        #self.cha_cha()
+        #self.walk_it_by_yourself()
+
+    def to_the_right(self):
+        """subroutine of dance method"""
+        for x in range(3):
+            self.encR(10)
+            self.encF(5)
 
     def nav(self):
         """auto pilots and attempts to maintain original heading"""
