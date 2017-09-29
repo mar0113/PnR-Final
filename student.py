@@ -82,7 +82,7 @@ class Piggy(pigo.Pigo):
             time.sleep(.2)
 
     def walk_it_by_yourself(self):
-        for x in range(2):
+        for x in range(4):
             self.encF(5)
             self.encB(5)
 
