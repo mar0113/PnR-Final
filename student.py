@@ -70,7 +70,7 @@ class Piggy(pigo.Pigo):
 
     def to_the_left(self):
         """subroutine of dance method"""
-        for x in range(4)
+        for x in range(4):
             self.encL(10)
             self.encF(5)
 
