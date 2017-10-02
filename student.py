@@ -61,6 +61,7 @@ class Piggy(pigo.Pigo):
         self.to_the_left()
         self.now_kick()
         self.walk_it_by_yourself()
+        self.electric_slide()
 
     def to_the_right(self):
         """subroutine of dance method"""
@@ -82,10 +83,23 @@ class Piggy(pigo.Pigo):
             time.sleep(.2)
 
     def walk_it_by_yourself(self):
+        """subroutine of dance method"""
         for x in range(4):
             self.encF(5)
             self.encB(5)
         print("\n--- Ta-Da! ---\n")
+
+    def electric_slide(self):
+        """subroutine of dance method"""
+        for x in range(4):
+            self.servo(40)
+            self.encL(5)
+            self.servo(10)
+            self.encR(5)
+            self.encF(5)
+            self.servo(40)
+            self.encB(5)
+
 
     def nav(self):
         """auto pilots and attempts to maintain original heading"""
