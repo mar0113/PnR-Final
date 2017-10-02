@@ -99,7 +99,7 @@ class Piggy(pigo.Pigo):
             self.servo(40)
             self.encB(5)
 
-         print("\n--- Ta-Da! ---\n")
+        print("\n--- Ta-Da! ---\n")
 
 
     def nav(self):
