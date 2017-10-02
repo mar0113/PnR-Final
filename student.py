@@ -87,7 +87,6 @@ class Piggy(pigo.Pigo):
         for x in range(4):
             self.encF(5)
             self.encB(5)
-        print("\n--- Ta-Da! ---\n")
 
     def electric_slide(self):
         """subroutine of dance method"""
@@ -99,6 +98,8 @@ class Piggy(pigo.Pigo):
             self.encF(5)
             self.servo(40)
             self.encB(5)
+
+         print("\n--- Ta-Da! ---\n")
 
 
     def nav(self):
