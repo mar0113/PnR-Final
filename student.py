@@ -72,6 +72,7 @@ class Piggy(pigo.Pigo):
             return False
         for loop in range(4):
             if not self.isClear():
+                print("NOT GOING TO DANCE")
                 return False
             print("Check #%d" % loop + 1)
             self.encR(8)  # figure out 90 deg
