@@ -70,11 +70,13 @@ class Piggy(pigo.Pigo):
         self.dist()
         if self.dist() < self.SAFE_STOP_DIST:
             return False
-        for x in range(4):
-            if not self.is_clear:
+        for loop in range(4):
+            if not self.isClear():
                 return False
-            self.encR(8)
-            return True
+            print("Check #%d" % loop + 1)
+            self.encR(8)  # figure out 90 deg
+        print("Safe to dance!")
+        return True
 
         #loop 3 times
             #  turn 90 deg
