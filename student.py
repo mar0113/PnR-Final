@@ -74,7 +74,7 @@ class Piggy(pigo.Pigo):
             if not self.is_clear:
                 return False
             self.encR(8)
-                return True
+         return True
 
         #loop 3 times
             #  turn 90 deg
