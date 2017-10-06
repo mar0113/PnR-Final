@@ -114,6 +114,8 @@ class Piggy(pigo.Pigo):
             self.encF(5)
             self.servo(40)
             self.encB(5)
+            self.servo(60)
+            self.encR(5)
 
         print("\n--- Ta-Da! ---\n")
 
