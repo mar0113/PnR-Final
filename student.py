@@ -73,6 +73,7 @@ class Piggy(pigo.Pigo):
                 return False
             print("Check #%d" % (x + 1))
             self.encR(8)  # figure out 90 deg
+            """moves in a 360 degree circle while moving servo to check for obstacles"""
         print("Safe to dance!")
         return True
 
@@ -95,7 +96,7 @@ class Piggy(pigo.Pigo):
     def now_kick(self):
         """subroutine of dance method"""
         for ang in range(60, 120, 10):
-            """loops in a 120 degree arc and moves servo"""
+            """loops in an arc and moves servo"""
             self.servo(ang)
             time.sleep(.2)
 
