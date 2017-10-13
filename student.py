@@ -140,6 +140,7 @@ class Piggy(pigo.Pigo):
         print("\n---- I'M ABOUT TO DRIVE FORWARD! ----\n")
         while(self.dist() > self.SAFE_STOP_DIST):
             time.sleep(.5)
+        self.stop()
 
 
 ####################################################
