@@ -136,12 +136,11 @@ class Piggy(pigo.Pigo):
 
     def cruise(self):
         """drive straight while path is clear"""
-        for x in range(20):
-            self.fwd()
-            print("\n---- I'M ABOUT TO DRIVE FORWARD! ----\n")
-            while(self.dist() > self.SAFE_STOP_DIST):
-                time.sleep(.5)
-        
+        self.fwd()
+        print("\n---- I'M ABOUT TO DRIVE FORWARD! ----\n")
+        while(self.dist() > self.SAFE_STOP_DIST):
+            time.sleep(.5)
+
 
 ####################################################
 ############### STATIC FUNCTIONS
