@@ -74,7 +74,7 @@ class Piggy(pigo.Pigo):
         for distance in self.scan:
             if distance and distance < 200 and not found_something:
                 found_something = True
-                print("Object # %d found, I think" % counter)
+                raw input("Object # %d found, I think" % counter)
             if distance and distance > 200 and found_something:
                 found_something = False
                 counter += 1
