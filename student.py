@@ -66,7 +66,7 @@ class Piggy(pigo.Pigo):
             self.walk_it_by_yourself()
             self.electric_slide()
 
-    def obstacle_count(selfself):
+    def obstacle_count(self):
         """scans and estimates the number of obstacles within sight"""
         self.wide_scan()
         found_something = False
