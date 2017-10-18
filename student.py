@@ -79,6 +79,7 @@ class Piggy(pigo.Pigo):
                 found_something = False
                 counter += 1
         print("\n----I SEE %d OBJECTS----\n" % counter)
+        self.encR(8)
 
     def safety_check(self):
         self.servo(self.MIDPOINT)   # look straight ahead
