@@ -145,6 +145,8 @@ class Piggy(pigo.Pigo):
         print("-----------! NAVIGATION ACTIVATED !------------\n")
         print("-------- [ Press CTRL + C to stop me ] --------\n")
         print("-----------! NAVIGATION ACTIVATED !------------\n")
+        self.obstacle_count()
+        # counts obstacles before beginning nav
         while True:
             if self.is_clear():
                 self.cruise()
