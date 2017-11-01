@@ -153,7 +153,6 @@ class Piggy(pigo.Pigo):
                 if self.is_clear():
                     self.cruise()
                 else:
-                    self.obstacle_count()
                     self.encL(27)
                     if self.is_clear():
                         self.cruise()
