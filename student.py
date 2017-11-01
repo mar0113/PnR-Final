@@ -68,7 +68,7 @@ class Piggy(pigo.Pigo):
 
     def obstacle_count(self):
         """scans and estimates the number of obstacles within sight"""
-        for x in range(4):
+        for x in range():
             self.wide_scan()
             found_something = False
             counter = 0
@@ -80,7 +80,6 @@ class Piggy(pigo.Pigo):
                 if distance and distance > 60 and found_something:
                     found_something = False
             print("\n----I SEE %d OBJECTS----\n" % counter)
-            self.encR(7)
 
     def safety_check(self):
         self.servo(self.MIDPOINT)   # look straight ahead
