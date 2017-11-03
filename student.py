@@ -180,6 +180,7 @@ class Piggy(pigo.Pigo):
                         self.restore_heading()
                     # check right and go if clear
                     # look left twice and then go
+                    # goes back to its original forward track
 
 
 
