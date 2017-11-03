@@ -168,12 +168,12 @@ class Piggy(pigo.Pigo):
             if self.is_clear():
                 self.cruise()
             else:
-                self.encB(4)
-                # backs up to scan surroundings and find clear path
                 self.encR(8)
                 if self.is_clear():
                     self.cruise()
                 else:
+                    self.encB(4)
+                    # backs up to scan surroundings and find clear path
                     self.encL(27)
                     if self.is_clear():
                         self.cruise()
