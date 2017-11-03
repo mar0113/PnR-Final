@@ -177,6 +177,7 @@ class Piggy(pigo.Pigo):
                     self.encL(27)
                     if self.is_clear():
                         self.cruise()
+                        self.restore_heading()
                     # check right and go if clear
                     # look left twice and then go
 
