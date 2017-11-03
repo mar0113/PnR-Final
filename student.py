@@ -43,6 +43,7 @@ class Piggy(pigo.Pigo):
                 "d": ("Dance", self.dance),
                 "o": ("Obstacle count", self.obstacle_count),
                 "c": ("Calibrate", self.calibrate),
+                "t": ("Test restore heading", self.test_restore_heading),
                 "s": ("Check status", self.status),
                 "q": ("Quit", quit_now)
                 }
@@ -137,6 +138,23 @@ class Piggy(pigo.Pigo):
 
         print("\n--- Ta-Da! ---\n")
 
+    def restore_heading(self):
+        """
+        Uses self.turn_track to reorient to original heading
+        """
+        print("Restoring heading!")
+        if self.turn_track > 0:
+            self.encL(abs(self.turn_track))
+        elif self.turn_track < 0:
+            self.encR(abs(self.turn_track))
+
+    def test_restore_heading(self):
+        self.encR(5)
+        self.encL(13)
+        self.encR(10)
+        self.encR(9)
+        self.encL(3)
+        self.restore_heading()
 
     def nav(self):
         """auto pilots and attempts to maintain original heading"""
@@ -150,6 +168,8 @@ class Piggy(pigo.Pigo):
             if self.is_clear():
                 self.cruise()
             else:
+                self.encB(4)
+                # backs up to scan surroundings and find clear path
                 self.encR(8)
                 if self.is_clear():
                     self.cruise()
