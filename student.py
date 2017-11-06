@@ -167,9 +167,9 @@ class Piggy(pigo.Pigo):
                 self.cruise() # moves robot forward due to clear path
             else:
                 self.stop()  # stops robot
-                self.best_path() # robot takes safest path with fewest/no obstacles
+                self.clear_path() # robot takes safest path with fewest/no obstacles
 
-    def best_path(self):
+    def clear_path(self):
         """find the best possible path with fewest/no obstacles"""
         clear_count = 0  # list to count clear paths
         path_lists = []  # number of safe paths, any grouping of 7 safe counts
@@ -186,6 +186,24 @@ class Piggy(pigo.Pigo):
                 clear_count = 0  # resets count
                 path_lists.append((x + x - 16) / 2)  # adds averaged degree path to a list
         print(path_lists)  # prints list of safe paths and their headings
+
+    def working_turn_nav(self):  # old nav method
+        """auto pilots and attempts to maintain original heading by turning right if i detects and object"""
+        logging.debug("Starting the turn_nav method")
+        print("-----------! NAVIGATION ACTIVATED !------------\n")
+        print("-------- [ Press CTRL + C to stop me ] --------\n")
+        print("-----------! NAVIGATION ACTIVATED !------------\n")
+        while True:
+            self.cruise()
+            if self.dist() < self.SAFE_STOP_DIST:
+                self.stop()
+                self.encB(4)
+                start = time.time()
+                while self.dist() < self.SAFE_STOP_DIST:
+                    self.right_rot()
+                end = time.time()
+                time_difference = start - end
+                print(time_difference)
 
 
 
