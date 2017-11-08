@@ -162,31 +162,27 @@ class Piggy(pigo.Pigo):
         print("-----------! NAVIGATION ACTIVATED !------------\n")
         print("-------- [ Press CTRL + C to stop me ] --------\n")
         print("-----------! NAVIGATION ACTIVATED !------------\n")
+        self.obstacle_count()
+        # counts obstacles before beginning nav
         while True:
             if self.is_clear(): # no obstacles are detected by the robot
                 print("I am going to move forward")
                 self.cruise() # moves robot forward due to clear path
             else: # obstacle is detected by the robot
-                self.stop()  # stops robot to not run into obstacles
-                self.clear_path() # robot takes safest path with no obstacles
+                print("Ut oh! Something is in the way!")
+                self.stop() # stops robot to not run into obstacles
+                self.encR(8) # turns robot right to find clear path
+                if self.is_clear(): # clear path found to the right
+                    print("I've found a clear path!")
+                    self.cruise() # robot moves forward in clear direction
+                else: # clear path is not found to the right
+                    print("Oops! Can't go that way!")
+                    self.encB(4)
+                    # backs up to scan surroundings and find clear path
+                    self.encL(27) # robot turns left to check surroundings
+                    if self.is_clear(): # robot finds a clear path to the right
+                        self.cruise() # robot moves forward in clear direction
 
-    def clear_path(self):
-        """find the best possible path with no obstacles"""
-        clear_count = 0  # list to count clear paths
-        path_lists = []  # number of safe paths, any grouping of 7 safe counts
-        for x in range(self.MIDPOINT - 40, self.MIDPOINT + 40):  # sets scan range
-            self.servo(x)  # moves servo to degree
-            time.sleep(.1)
-            self.scan[x] = self.dist()  # adds distance at degree to scan array
-            if self.scan[x] > 70:  # checks distance at scan
-                clear_count += 1  # adds to count if certain degree is safe
-            else:  # sees an obstacle
-                clear_count = 0  # resets count due to obstacle
-            if clear_count > 5:  # checks is it find 12 safe degrees in a row, represents a safe path
-                print("\n -----Found a path at scan----- \n" + str((x + x - 16) / 2))  # averages degree points for mid
-                clear_count = 0  # resets count
-                path_lists.append((x + x - 16) / 2)  # adds averaged degree path to a list
-        print(path_lists)  # prints list of safe paths and their headings
 
 
     def cruise(self):
