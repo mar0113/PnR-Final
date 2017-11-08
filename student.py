@@ -167,12 +167,12 @@ class Piggy(pigo.Pigo):
                 print("I am going to move forward!")
                 self.cruise() # moves robot forward due to clear path
             else: # obstacle is detected by the robot
-                self.encR(8)
+                self.encR(4)
                 if self.is_clear(): # clear path found to the right
                     self.cruise() # robot moves forward in clear direction
                 else: # obstacle is detected to the right
                     print("Ut oh! Something is in the way! I can't go that way!")
-                    self.encL(8) # turns left to find clear path
+                    self.encL(4) # turns left to find clear path
                     if self.is_clear(): # path is clear
                         self.cruise() # robot moves forward in clear direction
                     else: # obstacle is detected to the left
