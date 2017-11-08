@@ -179,9 +179,7 @@ class Piggy(pigo.Pigo):
                     print("Ut oh! Something is in the way! I can't go that way!")
                     self.encB(4) # backs robot up to find clear path
                     self.restore_heading()
-
-
-
+                    # reorients robot to original heading to try and find clear path
 
     def cruise(self):
         """drive straight while path is clear"""
