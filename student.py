@@ -162,21 +162,20 @@ class Piggy(pigo.Pigo):
         print("-----------! NAVIGATION ACTIVATED !------------\n")
         print("-------- [ Press CTRL + C to stop me ] --------\n")
         print("-----------! NAVIGATION ACTIVATED !------------\n")
-        self.obstacle_count()
-        # counts obstacles before beginning nav
         while True:
             if self.is_clear(): # no obstacles are detected by the robot
                 print("I am going to move forward!")
                 self.cruise() # moves robot forward due to clear path
             else: # obstacle is detected by the robot
-                print("Ut oh! Something is in the way! I can't go that way!")
-                if self.dist() < 15: # robot detects an obstacle ahead
-                    self.stop() # stops robot to avoid hitting the obstacle
-                    self.encB(4) # backs up robot to see surroundings and find clear path
-                    self.encR(10) # turns robot right to find clear path
+                self.encR(8)
                 if self.is_clear(): # clear path found to the right
-                    print("I've found a clear path!")
                     self.cruise() # robot moves forward in clear direction
+                else: # obstacle is detected to the right
+                    print("Ut oh! Something is in the way! I can't go that way!")
+                    self.encB(4) # backs up robot to see surroundings and find clear path
+                    self.encL(27) # turns left to find clear path
+                    if self.is_clear(): # path is clear
+                        self.cruise() # robot moves forward in clear direction
 
     def cruise(self):
         """drive straight while path is clear"""
