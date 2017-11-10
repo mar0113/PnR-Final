@@ -175,7 +175,7 @@ class Piggy(pigo.Pigo):
                 if self.is_clear(): # path is clear
                     self.cruise() # robot moves forward in clear direction
                 self.encB(8) # backs up robot if it still cannot find clear path and retests right and left
-                # restore_heading instead???
+            self.restore_heading() # reorients robot to original heading
 
     def cruise(self):
         """drive straight while path is clear"""
