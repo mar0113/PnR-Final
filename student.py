@@ -167,7 +167,7 @@ class Piggy(pigo.Pigo):
         right_now = datetime.datetime.utcnow()
         difference = (right_now - self.start_time).seconds
         print ("It took you %d seconds to run this" % difference)
-        while True:
+        while True: # creates loop so robot continues navigation
             if self.is_clear(): # no obstacles are detected by the robot
                 print("I am going to move forward!")
                 self.cruise() # moves robot forward due to clear path
@@ -177,7 +177,7 @@ class Piggy(pigo.Pigo):
                 self.encR(8) # turns right to find clear path
                 if self.is_clear(): # clear path found to the right
                     self.cruise() # robot moves forward in clear direction
-                else:
+                else: # obstacle is detected by the robot
                     self.encL(8) # turns left to find clear path if no clear path to the right
                     if self.is_clear(): # clear path found to the left
                         self.cruise() # robot moves forward in clear direction
