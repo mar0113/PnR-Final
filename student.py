@@ -174,6 +174,7 @@ class Piggy(pigo.Pigo):
             else: # obstacle is detected by the robot
                 print("Ut oh! Something is blocking my path!")
                 self.encB(8)  # backs up robot to try to find clear path
+                #### MAY NEED TO FIX ENCODER VALUES TO MAKE IT TURN LESS AND HELP PRECISION
                 self.encR(8) # turns right to find clear path
                 if self.is_clear(): # clear path found to the right
                     self.cruise() # robot moves forward in clear direction
