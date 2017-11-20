@@ -206,11 +206,11 @@ class Piggy(pigo.Pigo):
         self.stop()
 
 ##### WORKING DOUBLE CHECK METHOD
-   ##### def double_check(self):
-       ### if self.is_clear()
-            ## self.cruise()
-        ## else:
-            #   self.scan()
+    def double_check(self):
+        if self.is_clear():
+            self.cruise()
+        else:
+            self.scan()
 
 
 
