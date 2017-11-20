@@ -201,7 +201,7 @@ class Piggy(pigo.Pigo):
         self.fwd()
         print("\n---- I'M ABOUT TO DRIVE FORWARD! ----\n")
         while(self.dist() > self.SAFE_STOP_DIST):
-            time.sleep(.5)
+            time.sleep(.1)
         self.stop()
 
 
