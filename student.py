@@ -178,10 +178,10 @@ class Piggy(pigo.Pigo):
                 self.encR(6) # turns right to find clear path
                 if self.is_clear(): # clear path found to the right
                     self.cruise() # robot moves forward in clear direction
-                    else:  # obstacle is detected by the robot
-                        self.encL(6) # turns left to find clear path if no clear path to the right
+                else:  # obstacle is detected by the robot
+                    self.encL(6) # turns left to find clear path if no clear path to the right
                         if self.is_clear(): # clear path found to the left
-                            self.cruise() # robot moves forward in clear direction
+                        self.cruise() # robot moves forward in clear direction
                 self.restore_heading() # reorients robot to original heading
 
     def smooth_turn(self):
