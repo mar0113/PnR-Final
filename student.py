@@ -176,13 +176,13 @@ class Piggy(pigo.Pigo):
                 ### ADD DOUBLE CHECK
                 self.encB(6)  # backs up robot to try to find clear path
                 self.encR(6) # turns right to find clear path
-            if self.is_clear(): # clear path found to the right
-                self.cruise() # robot moves forward in clear direction
-            else: # obstacle found to the right of the robot
-                self.encB(6) # backs up robot to find clear path
-                self.ecnL(6) # robot moves to the self to find clear path
-                if self.is_clear(): # clear path found by robot
+                if self.is_clear(): # clear path found to the right
                     self.cruise() # robot moves forward in clear direction
+                else: # obstacle found to the right of the robot
+                    self.encB(6) # backs up robot to find clear path
+                    self.ecnL(6) # robot moves to the self to find clear path
+                    if self.is_clear(): # clear path found by robot
+                        self.cruise() # robot moves forward in clear direction
             self.restore_heading() # reorients robot to original heading
 
     def smooth_turn(self):
