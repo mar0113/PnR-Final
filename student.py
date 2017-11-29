@@ -168,22 +168,22 @@ class Piggy(pigo.Pigo):
         difference = (right_now - self.start_time).seconds
         print ("It took you %d seconds to run this" % difference)
         while True: # creates loop so robot continues navigation
-            if self.is_clear(): # no obstacles are detected by the robot
+            if self.is_clear():  # no obstacles are detected by the robot
                 print("I am going to move forward!")
-                self.cruise() # moves robot forward due to clear path
+                self.cruise()  # moves robot forward due to clear path
             else: # obstacle is detected by the robot
                 print("Ut oh! Something is blocking my path!")
                 ### ADD DOUBLE CHECK
                 self.encB(6)  # backs up robot to try to find clear path
-                self.encR(6) # turns right to find clear path
-                if self.is_clear(): # clear path found to the right
-                    self.cruise() # robot moves forward in clear direction
-                else: # obstacle found to the right of the robot
-                    self.encB(6) # backs up robot to find clear path
-                    self.ecnL(6) # robot moves to the self to find clear path
-                    if self.is_clear(): # clear path found by robot
-                        self.cruise() # robot moves forward in clear direction
-            self.restore_heading() # reorients robot to original heading
+                self.encR(6)  # turns right to find clear path
+                if self.is_clear():  # clear path found to the right
+                    self.cruise()  # robot moves forward in clear direction
+                else:  # obstacle found to the right of the robot
+                    self.encB(6)  # backs up robot to find clear path
+                    self.encL(6)  # robot moves to the self to find clear path
+                    if self.is_clear():  # clear path found by robot
+                        self.cruise()  # robot moves forward in clear direction
+            self.restore_heading()  # reorients robot to original heading
 
     def smooth_turn(self):
         self.right_rot()
