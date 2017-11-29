@@ -180,7 +180,7 @@ class Piggy(pigo.Pigo):
                     self.cruise()  # robot moves forward in clear direction
                 else:  # obstacle found to the right of the robot
                     self.encB(6)  # backs up robot to find clear path
-                    self.encL(6)  # robot moves to the self to find clear path
+                    self.encL(12)  # robot moves to the self to find clear path
                     if self.is_clear():  # clear path found by robot
                         self.cruise()  # robot moves forward in clear direction
             self.restore_heading()  # reorients robot to original heading
