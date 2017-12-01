@@ -22,7 +22,7 @@ class Piggy(pigo.Pigo):
         self.MIDPOINT = 90
         # YOU DECIDE: How close can an object get (cm) before we have to stop?
         self.SAFE_STOP_DIST = 40
-        self.HARD_STOP_DIST = 25
+        self.HARD_STOP_DIST = 30
         # YOU DECIDE: What left motor power helps straighten your fwd()?
         self.LEFT_SPEED = 125
         # YOU DECIDE: What left motor power helps straighten your fwd()?
@@ -173,7 +173,6 @@ class Piggy(pigo.Pigo):
                 self.cruise()  # moves robot forward due to clear path
             else: # obstacle is detected by the robot
                 print("Ut oh! Something is blocking my path!")
-                ### ADD DOUBLE CHECK
                 self.encB(6)  # backs up robot to try to find clear path
                 self.encR(6)  # turns right to find clear path
                 if self.is_clear():  # clear path found to the right
@@ -206,12 +205,6 @@ class Piggy(pigo.Pigo):
             time.sleep(.1)
         self.stop()
 
-##### WORKING DOUBLE CHECK METHOD
-    #def double_check(self):
-        #if self.is_clear():
-            #self.cruise()
-        #else:
-            #self.scan()
 
 
 
