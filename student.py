@@ -172,6 +172,7 @@ class Piggy(pigo.Pigo):
                 print("I am going to move forward!")
                 self.cruise()  # moves robot forward due to clear path
             else: # obstacle is detected by the robot
+                ### is there a way to do a double check without being redundant? ###
                 print("Ut oh! Something is blocking my path!")
                 self.encB(6)  # backs up robot to try to find clear path
                 self.encR(6)  # turns right to find clear path
@@ -181,6 +182,7 @@ class Piggy(pigo.Pigo):
                     self.encB(6)  # backs up robot to find clear path
                     self.encL(10)  # robot moves to the self to find clear path
                     if self.is_clear():  # clear path found by robot
+                        print("Yay! I found a clear path and can move forward!")
                         self.cruise()  # robot moves forward in clear direction
             self.restore_heading()  # reorients robot to original heading
 
