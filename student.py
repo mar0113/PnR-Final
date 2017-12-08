@@ -171,8 +171,9 @@ class Piggy(pigo.Pigo):
             if self.is_clear():  # no obstacles are detected by the robot
                 print("I am going to move forward!")
                 self.cruise()  # moves robot forward due to clear path
+                ### scan while driving??? ###
             else: # obstacle is detected by the robot
-                ### is there a way to do a double check without being redundant? ###
+                ### wish I could find a way to double check without being redundant ###
                 print("Ut oh! Something is blocking my path!")
                 self.encB(6)  # backs up robot to try to find clear path
                 self.encR(6)  # turns right to find clear path
