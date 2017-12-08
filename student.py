@@ -208,6 +208,24 @@ class Piggy(pigo.Pigo):
             time.sleep(.1)
         self.stop()
 
+   #### working double check method ####
+    def double_check(self): ### method to see if an object is really in the way
+        while True: # creates loop
+            if self.is_clear(): # clear path found by the robot
+                self.cruise() # robot moves forward in original path
+            else: # if robot detects an obstacle ahead
+                print("Is something actually there?")
+                self.scan() # robots scans to see if an object is actually there
+                self.encB(4) # robot backs up after checking
+                if self.is_clear(): # there actually was no object detected by the robot
+                    print("Oh! Nothing was actually there. I'm gonna go this way!")
+                    self.cruise() # since no object was seen, robot keeps moving
+                else: # object was actually seen by the robot
+                    print("Yep, something was actually there")
+                    self.nav() # robot continues nav method
+
+    ### don't know how to make this method work because it's just gonna get stuck in the loop once it activates the nav method ###
+
 
 
 
